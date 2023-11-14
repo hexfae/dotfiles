@@ -1,0 +1,48 @@
+theme = "base16_transparent"
+
+[editor]
+scrolloff = 10
+mouse = false
+middle-click-paste = false
+shell = ["nu", "'--commands'"]
+line-number = "relative"
+gutters = ["diagnostics", "line-numbers", "diff"]
+idle-timeout = 0
+preview-completion-insert = false
+completion-trigger-len = 1
+bufferline = "multiple"
+color-modes = true
+
+[editor.statusline]
+left = ["mode", "file-modification-indicator", "read-only-indicator", "spinner"]
+center = ["file-name"]
+right = ["primary-selection-length", "workspace-diagnostics","diagnostics", "position"]
+separator = "│"
+mode.normal = "N"
+mode.insert = "I"
+mode.select = "S"
+
+[editor.lsp]
+display-messages = true
+display-inlay-hints = true
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.auto-pairs]
+'(' = ')'
+'{' = '}'
+'[' = ']'
+'"' = '"'
+'`' = '`'
+'<' = '>'
+
+[editor.indent-guides]
+render = true
+character = "▏"
+skip-levels = 1
+
+[editor.soft-wrap]
+enable = true
