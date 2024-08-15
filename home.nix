@@ -47,6 +47,8 @@
         nil
         alejandra
         amberol
+        obsidian
+        librewolf
       ])
       ++ (with pkgs.gnomeExtensions; [
         dash-to-dock
