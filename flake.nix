@@ -46,7 +46,26 @@
         nixos-hardware.nixosModules.common-gpu-amd
         nixos-hardware.nixosModules.common-pc
         nixos-hardware.nixosModules.common-pc-ssd
-        ./deck.nix
+        ./deck/deck.nix
+      ];
+      specialArgs = {
+        host = "deck";
+        inherit self inputs username;
+      };
+    };
+
+    nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
+      inherit system;
+      modules = [
+        chaotic.nixosModules.default
+        home-manager.nixosModules.default
+        jovian.nixosModules.default
+        inputs.stylix.nixosModules.stylix
+        nixos-hardware.nixosModules.common-cpu-amd
+        nixos-hardware.nixosModules.common-gpu-amd
+        nixos-hardware.nixosModules.common-pc
+        nixos-hardware.nixosModules.common-pc-ssd
+        ./deck/deck.nix
       ];
       specialArgs = {
         host = "deck";

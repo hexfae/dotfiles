@@ -1,8 +1,8 @@
 {pkgs, ...}: {
   imports = [
     ./hardware-configuration.nix
-    ./desktop/gnome.nix
-    ./core
+    ../desktop/gnome.nix
+    ../core
   ];
 
   jovian = {
