@@ -19,6 +19,11 @@
       follows = "chaotic/jovian";
     };
 
+    disko = {
+      url = "github:nix-community/disko";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     stylix.url = "github:danth/stylix";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
   };
@@ -29,6 +34,7 @@
     nixpkgs,
     home-manager,
     jovian,
+    disko,
     stylix,
     nixos-hardware,
   } @ inputs: let
@@ -59,16 +65,16 @@
       modules = [
         chaotic.nixosModules.default
         home-manager.nixosModules.default
-        jovian.nixosModules.default
+        disko.nixosModules.disko
         inputs.stylix.nixosModules.stylix
         nixos-hardware.nixosModules.common-cpu-amd
         nixos-hardware.nixosModules.common-gpu-amd
         nixos-hardware.nixosModules.common-pc
         nixos-hardware.nixosModules.common-pc-ssd
-        ./deck/deck.nix
+        ./laptop/laptop.nix
       ];
       specialArgs = {
-        host = "deck";
+        host = "laptop";
         inherit self inputs username;
       };
     };

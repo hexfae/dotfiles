@@ -154,6 +154,26 @@
         "url": "https://flakehub.com/f/chaotic-cx/nix-empty-flake/%3D0.1.2.tar.gz"
       }
     },
+    "disko": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1724163524,
+        "narHash": "sha256-3A06DYw47oSLYMalkWDLzTMHC0MKgm1mNfaca9sqUnI=",
+        "owner": "nix-community",
+        "repo": "disko",
+        "rev": "c7b14da22e302e0f9d7aa4df26b61016bcedf738",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "disko",
+        "type": "github"
+      }
+    },
     "fenix": {
       "inputs": {
         "nixpkgs": [
@@ -397,6 +417,7 @@
     "root": {
       "inputs": {
         "chaotic": "chaotic",
+        "disko": "disko",
         "home-manager": "home-manager_2",
         "jovian": [
           "chaotic",

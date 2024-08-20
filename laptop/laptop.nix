@@ -1,30 +1,12 @@
 {pkgs, ...}: {
   imports = [
     ./hardware-configuration.nix
+    ./disk-configuration.nix
     ../desktop/gnome.nix
     ../core
   ];
 
-  networking.hostName = "deck";
-
-  jovian = {
-    hardware.has.amd.gpu = true;
-    devices.steamdeck = {
-      enable = true;
-      autoUpdate = true;
-    };
-    steam = {
-      enable = true;
-      autoStart = true;
-      desktopSession = "gnome";
-      user = "hexfae";
-    };
-  };
-
-  environment.systemPackages = with pkgs; [
-    jupiter-dock-updater-bin
-    steamdeck-firmware
-  ];
+  networking.hostName = "laptop";
 
   stylix = {
     enable = true;
